@@ -27,16 +27,11 @@ class Sensor {
       }
     }
 
-    for (let i=0; i<traffic.length; i++){
-      const poly= traffic[i].polygon;
-      for(let j=0; j<poly.length; j++){
-        const value= getIntersection(
-          ray[0],
-          ray[1],
-          poly[j],
-          poly[(j+1)%poly.length]
-        );
-        if(value){
+    for (let i = 0; i < traffic.length; i++) {
+      const poly = traffic[i].polygon;
+      for (let j = 0; j < poly.length; j++) {
+        const value = getIntersection(ray[0], ray[1], poly[j], poly[(j + 1) % poly.length]);
+        if (value) {
           touches.push(value);
         }
       }
